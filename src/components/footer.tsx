@@ -28,13 +28,21 @@ export function Footer() {
             </p>
             <ul className="text-base font-normal text-primary">
               <li className="mb-4">
-                <Link href="#" className="underline" target="_blank">
-                  Link 1
+                <Link
+                  href="https://mercadolivre.com.br"
+                  className="underline"
+                  target="_blank"
+                >
+                  Mercado Livre
                 </Link>
               </li>
               <li className="mb-4">
-                <Link href="#" className="underline" target="_blank">
-                  Link 2
+                <Link
+                  href="https://developers.mercadolivre.com.br"
+                  className="underline"
+                  target="_blank"
+                >
+                  Developers
                 </Link>
               </li>
             </ul>
@@ -53,7 +61,7 @@ export function Footer() {
               type="radio"
               value="pt-BR"
               name="language-radio-group"
-              className="text-accent focus:ring-accentHover h-4 w-4 border-border bg-white"
+              className="focus:ring-accentHover h-4 w-4 border-border bg-white text-accent"
             />
             <label
               htmlFor="language-pt-radio"
@@ -68,7 +76,7 @@ export function Footer() {
               type="radio"
               value="es-AR"
               name="language-radio-group"
-              className="text-accent focus:ring-accentHover h-4 w-4 border-border bg-white"
+              className="focus:ring-accentHover h-4 w-4 border-border bg-white text-accent"
             />
             <label
               htmlFor="language-ar-radio"

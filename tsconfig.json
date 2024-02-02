@@ -20,8 +20,11 @@
         "name": "next",
       },
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
+      "@home/*": ["./src/modules/home/*"],
+      "@product/*": ["./src/modules/product/*"],
     },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

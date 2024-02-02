@@ -3,6 +3,8 @@ import './globals.css';
 import { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
 
+import Providers from '@/app/providers';
+
 export const inter = Inter({
   weight: ['300', '400'],
   subsets: ['latin'],
@@ -12,7 +14,9 @@ export const inter = Inter({
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <main className={`${inter.variable} font-sans`}>
-      <Component {...pageProps} />
+      <Providers dehydratedState={pageProps.dehydratedState}>
+        <Component {...pageProps} />
+      </Providers>
     </main>
   );
 }
