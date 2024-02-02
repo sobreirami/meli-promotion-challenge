@@ -10,8 +10,13 @@ module.exports = {
     extend: {
       colors: {
         primary: '#262627',
+        secondary: '#39393A',
+        tertiary: '#525252',
         border: '#E2E2E2',
-        accent: '#6D28D9 ',
+        accent: '#6D28D9',
+        popover: '#F9F9F9',
+        white: '#ffffff',
+        dark: '#000000',
       },
       fontFamily: {
         inter: ['var(--font-inter)'],
