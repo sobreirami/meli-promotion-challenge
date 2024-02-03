@@ -25,23 +25,28 @@ export function Home() {
 
       <HomeCarouselPromotion />
 
-      <div className="z-10 my-4 mt-[-80px] flex flex-col gap-4 md:mx-2">
-        <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
-          {separeItems.first.map((item) => (
-            <CardItem key={item.id} item={item} />
-          ))}
+      {items?.results && !!items?.results.length && (
+        <div
+          className="z-10 my-4 mt-[-80px] flex flex-col gap-4 md:mx-2"
+          data-testid="home-screen"
+        >
+          <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
+            {separeItems.first.map((item) => (
+              <CardItem key={item.id} item={item} />
+            ))}
+          </div>
+          {!!separeItems.last.length && (
+            <>
+              <h2 className="text-lg font-semibold">Promoções</h2>
+              <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
+                {separeItems.last.map((item) => (
+                  <CardItem key={item.id} item={item} />
+                ))}
+              </div>
+            </>
+          )}
         </div>
-        {separeItems.last.length && (
-          <>
-            <h2 className="text-lg font-semibold">Promoções</h2>
-            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
-              {separeItems.last.map((item) => (
-                <CardItem key={item.id} item={item} />
-              ))}
-            </div>
-          </>
-        )}
-      </div>
+      )}
     </>
   );
 }
