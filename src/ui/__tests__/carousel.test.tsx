@@ -1,4 +1,4 @@
-import { render } from '@test/utils/render';
+import { customRender } from '@test/utils/render';
 import { Carousel } from '@/ui/carousel';
 
 describe('UI - Carousel Snapshot', () => {
@@ -9,7 +9,7 @@ describe('UI - Carousel Snapshot', () => {
       <div key={2}>Item 3</div>,
     ];
 
-    const { container } = render(<Carousel items={items} />);
+    const { container } = customRender(<Carousel items={items} />);
     expect(container).toMatchSnapshot();
   });
 });

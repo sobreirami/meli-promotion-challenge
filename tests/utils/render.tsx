@@ -1,6 +1,6 @@
 import type { ReactElement, ReactNode } from 'react';
-import type { RenderOptions } from '@testing-library/react';
-import { render as testingRender } from '@testing-library/react';
+import type { RenderHookOptions, RenderResult } from '@testing-library/react';
+import { renderHook, render as testingRender } from '@testing-library/react';
 
 import TanstackProvider from '@/app/providers/tanstackProvider';
 
@@ -17,9 +17,14 @@ const AllTheProviders = ({ children, dehydratedState }: Props) => (
 
 const customRender = (
   ui: ReactElement,
-  options?: Omit<RenderOptions, 'queries'>
+  options?: Omit<RenderResult, 'rerender'>
 ) => testingRender(ui, { wrapper: AllTheProviders, ...options });
+
+const customRenderHook = <TProps, TResult>(
+  callback: (initialProps: TProps) => TResult,
+  options?: RenderHookOptions<TProps & { initialProps?: TResult }>
+) => renderHook(callback, { wrapper: AllTheProviders, ...options });
 
 export * from '@testing-library/react';
 
-export { customRender as render };
+export { customRender, customRenderHook };

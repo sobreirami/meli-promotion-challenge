@@ -1,19 +1,35 @@
 import { mockGetRequest } from '@test/mocks/server';
+import { act, customRenderHook, waitFor } from '@test/utils/render';
 import { getCategories } from '@/services/category/client';
 
 import { MOCK_RESPONSE_CATEGORY } from './mock';
+import { useCategory } from '..';
 
 describe('Service - Category', () => {
-  it('receive data from getCategories', async () => {
-    const siteId = 'MLB';
+  const siteId = 'MLB';
 
+  beforeEach(() => {
     mockGetRequest({
       endpoint: `/sites/${siteId}/categories`,
       response: MOCK_RESPONSE_CATEGORY,
     });
+  });
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it('receive data from getCategories', async () => {
     const result = await getCategories({ siteId });
-
     expect(result).toEqual(MOCK_RESPONSE_CATEGORY);
+  });
+
+  it('should to must return data successfully from the hook useCategory', async () => {
+    const { result } = customRenderHook(() => useCategory({ siteId }));
+
+    await act(async () => {
+      await waitFor(() => result.current.isSuccess);
+    });
+    expect(result.current.data).toEqual(MOCK_RESPONSE_CATEGORY);
   });
 });
