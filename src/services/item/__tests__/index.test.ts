@@ -22,17 +22,17 @@ describe('Service - Item', () => {
     jest.clearAllMocks();
   });
 
-  it('receive data from getItem', async () => {
+  test('receive data from getItem', async () => {
     const result = await getItem({ itemId });
     expect(result).toEqual(MOCK_RESPONSE_ITEM);
   });
 
-  it('receive data from getItemDescription', async () => {
+  test('receive data from getItemDescription', async () => {
     const result = await getItemDescription({ itemId });
     expect(result).toEqual(MOCK_RESPONSE_ITEM_DESCRIPTION);
   });
 
-  it('should return complete item data getItem + getItemDescription', async () => {
+  test('should return complete item data getItem + getItemDescription', async () => {
     const result = await getItemWithDescription({ itemId });
     expect(result).toEqual({
       ...MOCK_RESPONSE_ITEM,

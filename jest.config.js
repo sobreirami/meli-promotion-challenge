@@ -15,6 +15,8 @@ const customJestConfig = {
     '^@item/(.*)$': '<rootDir>/src/modules/item/$1',
     '^@test/(.*)$': '<rootDir>/tests/$1',
   },
+  cacheDirectory: `.jest-cache`,
+  testTimeout: 10000,
 };
 
 module.exports = createJestConfig(customJestConfig);

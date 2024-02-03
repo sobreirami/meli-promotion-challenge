@@ -5,11 +5,7 @@ import { Search } from '@/modules/item/screens/search';
 import { ResponseSearch } from '@/services/search/types';
 
 describe('Modules - Item - Search', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
-  it('should render the Search screen', async () => {
+  test('should render the Search screen', async () => {
     const searchQuery = 'product 1';
 
     const results = Array.from({ length: 10 }, (_, index) => ({

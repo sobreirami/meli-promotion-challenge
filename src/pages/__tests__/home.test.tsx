@@ -27,10 +27,6 @@ describe('Pages - Home', () => {
     });
   });
 
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
   test('should render the page Home', async () => {
     customRender(<HomePage />);
     expect(screen.getByTestId('layout')).toBeInTheDocument();

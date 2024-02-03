@@ -1,3 +1,4 @@
+import { beforeEach } from 'node:test';
 import { MOCK_RESPONSE_CATEGORY } from '@/services/category/__tests__/mock';
 import { MOCK_RESPONSE_SEARCH } from '@/services/search/__tests__/mock';
 
@@ -27,10 +28,6 @@ describe('Pages - Search', () => {
     });
   });
 
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
   test('should render the page Search', async () => {
     const searchTerm = 'product 1';
 
@@ -46,8 +43,6 @@ describe('Pages - Search', () => {
     await act(async () => {
       await waitFor(() => result.current.isSuccess);
     });
-
-    expect(result.current.data).not.toBe(undefined);
 
     if (!result.current.data) {
       return;

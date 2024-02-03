@@ -4,10 +4,6 @@ import { mockGetRequest } from '@test/mocks/server';
 import { customRender, screen, waitFor } from '@test/utils/render';
 
 describe('Components - Sidebar', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
   test('should render the component Sidebar', async () => {
     const siteId = 'MLB';
 

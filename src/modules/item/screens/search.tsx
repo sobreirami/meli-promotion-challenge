@@ -53,12 +53,12 @@ export function Search({ data, search }: Props) {
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {data?.results.map((item) => <CardItem key={item.id} item={item} />)}
       </div>
-      <div className="flex items-center justify-between px-2">
+      <div className="flex items-center justify-between p-2">
         <div className="flex flex-1 items-center justify-between space-x-6 lg:space-x-8">
           <div className="flex items-center gap-2">
-            <p className="text-sm font-medium">Rows per page</p>
+            <p className="text-sm font-medium">Linhas</p>
             <Select value={`${limit}`} onValueChange={handleLimit}>
-              <SelectTrigger className="h-8 w-[70px]">
+              <SelectTrigger className="h-8 w-[70px] rounded-lg border">
                 <SelectValue placeholder={limit} />
               </SelectTrigger>
               <SelectContent side="top">

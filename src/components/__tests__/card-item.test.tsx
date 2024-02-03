@@ -14,7 +14,7 @@ describe('Components - CardItem', () => {
     jest.clearAllMocks();
   });
 
-  it('should render the component CardItem', () => {
+  test('should render the component CardItem', () => {
     customRender(<CardItem item={MOCK_RESPONSE_ITEM} />);
     expect(screen.getByText('title')).toBeInTheDocument();
     expect(screen.getByText('R$ 10,50')).toBeInTheDocument();

@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
-import Placeholder from '@/assets/placeholder.svg';
+import { Logo } from './logo';
 
 export function Footer() {
   return (
@@ -13,16 +12,7 @@ export function Footer() {
         <div className="md:flex md:justify-between">
           <div className="mb-6 flex flex-col gap-4 md:mb-0 md:gap-0">
             <div className="mb-0 flex flex-col gap-3 md:mb-14">
-              <Link href="/">
-                <div className="flex flex-row items-center gap-1">
-                  <Image
-                    src={Placeholder}
-                    alt="Desafio Técnico - Challenge Promotions"
-                    width={60}
-                  />
-                  Logo
-                </div>
-              </Link>
+              <Logo />
             </div>
           </div>
           <div>

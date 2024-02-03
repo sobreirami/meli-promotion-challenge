@@ -13,12 +13,12 @@ describe('Components - Header', () => {
     jest.clearAllMocks();
   });
 
-  it('should render the component Header', () => {
+  test('should render the component Header', () => {
     customRender(<Header />);
     expect(screen.getByTestId('header')).toBeInTheDocument();
   });
 
-  it('must search for the product if the completed form', () => {
+  test('must search for the product if the completed form', () => {
     customRender(<Header />);
 
     const searchInput = screen.getByTestId('input-search');

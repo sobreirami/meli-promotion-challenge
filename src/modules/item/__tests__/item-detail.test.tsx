@@ -12,11 +12,7 @@ describe('Modules - Item - ItemDetail', () => {
     });
   });
 
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
-  it('should render the ItemDetail screen', async () => {
+  test('should render the ItemDetail screen', async () => {
     customRender(<ItemDetail />);
     expect(screen.getByTestId('item-detail-screen')).toBeInTheDocument();
     expect(

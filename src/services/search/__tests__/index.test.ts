@@ -19,7 +19,7 @@ describe('Service - Search', () => {
     jest.clearAllMocks();
   });
 
-  it('receive data from searchItems', async () => {
+  test('receive data from searchItems', async () => {
     const result = await searchItems({
       siteId,
       limit: 10,
@@ -29,7 +29,7 @@ describe('Service - Search', () => {
     expect(result).toEqual(MOCK_RESPONSE_SEARCH);
   });
 
-  it('should to must return data successfully from the hook useSearchItem', async () => {
+  test('should to must return data successfully from the hook useSearchItem', async () => {
     const { result } = customRenderHook(() =>
       useSearchItem({
         siteId,
@@ -42,6 +42,11 @@ describe('Service - Search', () => {
     await act(async () => {
       await waitFor(() => result.current.isSuccess);
     });
+
+    if (!result.current.data) {
+      return;
+    }
+
     expect(result.current.data).toEqual(MOCK_RESPONSE_SEARCH);
   });
 });

@@ -7,11 +7,7 @@ import { Home } from '@/modules/home';
 describe('Modules - Home', () => {
   const siteId = 'MLB';
 
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
-  it('should render the Home screen', async () => {
+  test('should render the Home screen', async () => {
     mockGetRequest({
       endpoint: `/sites/${siteId}/search`,
       response: MOCK_RESPONSE_SEARCH,
@@ -28,7 +24,7 @@ describe('Modules - Home', () => {
     expect(screen.queryByText('Promoções')).not.toBeInTheDocument();
   });
 
-  it('should render section promotion', async () => {
+  test('should render section promotion', async () => {
     mockGetRequest({
       endpoint: `/sites/${siteId}/search`,
       response: {

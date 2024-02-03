@@ -13,10 +13,6 @@ describe('Components - Layout', () => {
     });
   });
 
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
   test('should render the component Layout', async () => {
     customRender(<Layout>Layout Content</Layout>);
     expect(screen.getByTestId('layout')).toBeInTheDocument();

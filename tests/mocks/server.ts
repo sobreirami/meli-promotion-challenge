@@ -14,5 +14,11 @@ export const mockGetRequest = <T>({
   status = 200,
   response,
 }: MockRequestProps<T>) => {
-  mockAxios.onGet(endpoint).reply(status, response);
+  mockAxios.onGet(endpoint).reply(() => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve([status, response]);
+      }, 500);
+    });
+  });
 };

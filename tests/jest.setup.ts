@@ -7,9 +7,7 @@ import './mocks/image';
 import './mocks/markdown';
 
 afterEach(() => {
-  queryClient.clear();
-});
-
-afterAll(() => {
+  jest.clearAllMocks();
   mockAxios.resetHandlers();
+  queryClient.clear();
 });

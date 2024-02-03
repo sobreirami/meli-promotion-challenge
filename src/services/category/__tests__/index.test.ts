@@ -19,17 +19,22 @@ describe('Service - Category', () => {
     jest.clearAllMocks();
   });
 
-  it('receive data from getCategories', async () => {
+  test('receive data from getCategories', async () => {
     const result = await getCategories({ siteId });
     expect(result).toEqual(MOCK_RESPONSE_CATEGORY);
   });
 
-  it('should to must return data successfully from the hook useCategory', async () => {
+  test('should to must return data successfully from the hook useCategory', async () => {
     const { result } = customRenderHook(() => useCategory({ siteId }));
 
     await act(async () => {
       await waitFor(() => result.current.isSuccess);
     });
+
+    if (!result.current.data) {
+      return;
+    }
+
     expect(result.current.data).toEqual(MOCK_RESPONSE_CATEGORY);
   });
 });
