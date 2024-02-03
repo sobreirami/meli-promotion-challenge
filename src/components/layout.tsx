@@ -18,6 +18,7 @@ export function Layout({ className, children }: LayoutProps) {
           'mx-auto w-full max-w-screen-xl bg-white',
           className
         )}
+        data-testid="layout"
       >
         <div className="flex">
           <Sidebar />

@@ -6,6 +6,9 @@ import './mocks/router';
 import './mocks/image';
 
 afterEach(() => {
-  mockAxios.resetHandlers();
   queryClient.clear();
+});
+
+afterAll(() => {
+  mockAxios.resetHandlers();
 });
