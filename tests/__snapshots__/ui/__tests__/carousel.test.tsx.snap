@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI - Carousel Snapshot should match snapshot with default props 1`] = `
+<div>
+  <div
+    class="flex w-full snap-x snap-mandatory flex-row overflow-hidden outline-none focus:outline-none"
+  >
+    <div
+      class="h-full w-full flex-shrink-0 snap-start outline-none transition-opacity duration-500 ease-in-out opacity-100"
+      style="transition-delay: 0ms; z-index: 1;"
+    >
+      <div>
+        Item 1
+      </div>
+    </div>
+    <div
+      class="h-full w-full flex-shrink-0 snap-start outline-none transition-opacity duration-500 ease-in-out opacity-0"
+      style="transition-delay: 500ms; z-index: 0;"
+    >
+      <div>
+        Item 2
+      </div>
+    </div>
+    <div
+      class="h-full w-full flex-shrink-0 snap-start outline-none transition-opacity duration-500 ease-in-out opacity-0"
+      style="transition-delay: 500ms; z-index: 0;"
+    >
+      <div>
+        Item 3
+      </div>
+    </div>
+  </div>
+</div>
+`;
