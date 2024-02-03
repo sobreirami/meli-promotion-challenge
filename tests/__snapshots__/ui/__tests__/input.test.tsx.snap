@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI - Input Snapshot should match snapshot with custom props 1`] = `
+<div>
+  <input
+    class="w-full appearance-none rounded border border-border bg-white px-4 py-3 leading-tight text-primary focus:outline-none"
+    placeholder="Email"
+    type="email"
+  />
+</div>
+`;
+
+exports[`UI - Input Snapshot should match snapshot with default props 1`] = `
+<div>
+  <input
+    class="w-full appearance-none rounded border border-border bg-white px-4 py-3 leading-tight text-primary focus:outline-none"
+  />
+</div>
+`;
