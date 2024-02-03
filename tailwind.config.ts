@@ -18,6 +18,7 @@ module.exports = {
         popover: '#F9F9F9',
         white: '#ffffff',
         dark: '#000000',
+        background: '#F9F9F9',
       },
       fontFamily: {
         inter: ['var(--font-inter)'],

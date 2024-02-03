@@ -1,9 +1,9 @@
 import { GetServerSideProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 
-import { Search } from '@product/screens/search';
+import { Search } from '@item/screens/search';
 import { Layout } from '@/components/layout';
-import { searchProducts } from '@/services/search/client';
+import { searchItems } from '@/services/search/client';
 import { ResponseSearch } from '@/services/search/types';
 
 type Props = {
@@ -38,7 +38,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   const parseLimit = limit ? Number(limit) : 10;
   const parseOffset = offset ? Number(offset) : 0;
 
-  const data = await searchProducts({
+  const data = await searchItems({
     limit: parseLimit,
     offset: parseOffset,
     search,

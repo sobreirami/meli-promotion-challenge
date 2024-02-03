@@ -1,5 +1,5 @@
 import { RequestMeliApi } from '@/entities/Meli';
-import { Product } from '@/entities/Product';
+import { Item } from '@/entities/Item';
 
 export type ResponseSearch = {
   paging: {
@@ -7,7 +7,7 @@ export type ResponseSearch = {
     offset: number;
     limit: number;
   };
-  results: Product[];
+  results: Item[];
 };
 
 export type RequestSearch = RequestMeliApi & {

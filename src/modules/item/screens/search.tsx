@@ -2,7 +2,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 import { SelectTrigger } from '@radix-ui/react-select';
 import { useRouter } from 'next/router';
 
-import { CardProduct } from '@/components/card-product';
+import { CardItem } from '@/components/card-item';
 import { ResponseSearch } from '@/services/search/types';
 import { Button } from '@/ui/button';
 import { Select, SelectContent, SelectItem, SelectValue } from '@/ui/select';
@@ -51,9 +51,7 @@ export function Search({ data, search }: Props) {
         </small>
       </div>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-        {data?.results.map((product) => (
-          <CardProduct key={product.id} product={product} />
-        ))}
+        {data?.results.map((item) => <CardItem key={item.id} item={item} />)}
       </div>
       <div className="flex items-center justify-between px-2">
         <div className="flex flex-1 items-center justify-between space-x-6 lg:space-x-8">

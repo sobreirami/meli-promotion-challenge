@@ -1,24 +1,24 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Product } from '@/entities/Product';
 import formatCurrencyValue from '@/utils/formatCurrencyValue';
+import { Item } from '@/entities/Item';
 
 type Props = {
-  product: Product;
+  item: Item;
 };
 
-export function CardProduct({ product }: Props) {
+export function CardItem({ item }: Props) {
   return (
     <Link
-      href={`/${product.id}`}
+      href={`/${item.id}`}
       className="h-30 flex w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-border bg-white p-4 hover:font-medium hover:text-accent md:max-w-2xl"
     >
       <Image
-        src={product.thumbnail}
-        alt={product.title}
+        src={item.thumbnail}
+        alt={item.title}
         width={90}
-        blurDataURL={product.thumbnail}
+        blurDataURL={item.thumbnail}
         placeholder="blur"
         className="rounded-lg object-cover object-center outline-none focus:outline-none"
         height={90}
@@ -26,11 +26,11 @@ export function CardProduct({ product }: Props) {
         sizes="53vw"
       />
       <div className="flex flex-col items-center gap-0 text-center">
-        <p>{product.title}</p>
+        <p>{item.title}</p>
         <p>
           {formatCurrencyValue({
-            currency: product.currency ?? 'BRL',
-            value: product.price,
+            currency: item.currency ?? 'BRL',
+            value: item.price,
           })}
         </p>
       </div>

@@ -7,7 +7,7 @@ export async function getCategories({
   siteId,
 }: RequestMeliApi): Promise<ResponseCategory[]> {
   const { data } = await apiMeli.get<ResponseCategory[]>(
-    `${siteId}/categories`
+    `/sites/${siteId}/categories`
   );
 
   return data;

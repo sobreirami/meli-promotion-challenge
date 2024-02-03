@@ -7,12 +7,17 @@ const buttonVariant = tv({
   variants: {
     variant: {
       primary:
-        'data-[variant=primary]:bg-primary text-primary shadow data-[variant=primary]:hover:bg-dark',
+        'data-[variant=primary]:bg-primary text-white shadow data-[variant=primary]:hover:bg-dark',
+      secondary:
+        'data-[variant=secondary]:bg-secondary text-white shadow data-[variant=secondary]:hover:bg-dark',
+      tertiary:
+        'data-[variant=tertiary]:bg-tertiary text-white shadow data-[variant=tertiary]:hover:bg-dark',
       outline:
         'border border-input data-[variant=outline]:bg-background shadow-sm data-[variant=outline]:hover:bg-accent data-[variant=outline]:hover:text-white',
     },
     size: {
       md: 'h-9 px-4 py-2',
+      lg: 'h-10 px-6 py-2',
       icon: 'h-9 w-9',
     },
   },
