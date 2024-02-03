@@ -10,7 +10,7 @@ export function ItemDetail() {
   const { item } = useItem();
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row" data-testid="item-detail-screen">
       <section className="flex flex-1 flex-col pr-4">
         <ItemSlidePictures />
 
