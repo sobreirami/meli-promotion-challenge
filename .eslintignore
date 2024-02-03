@@ -5,3 +5,5 @@ tailwind.config.js
 next.config.js
 next.config.mjs
 postcss.config.js
+tests/coverage
+jest.config.js

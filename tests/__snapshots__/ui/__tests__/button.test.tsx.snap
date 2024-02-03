@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI - Button Snapshot should match snapshot with default props 1`] = `
+<div>
+  <button
+    class="flex items-center justify-center rounded-md gap-2 disabled:opacity-60 disabled:cursor-not-allowed w-full data-[variant=primary]:bg-primary text-white shadow data-[variant=primary]:hover:bg-dark h-9 px-4 py-2"
+  />
+</div>
+`;
+
+exports[`UI - Button Snapshot should match snapshot with secondary props 1`] = `
+<div>
+  <button
+    class="flex items-center justify-center rounded-md gap-2 disabled:opacity-60 disabled:cursor-not-allowed w-full data-[variant=secondary]:bg-secondary text-white shadow data-[variant=secondary]:hover:bg-dark h-9 px-4 py-2"
+    data-variant="secondary"
+  />
+</div>
+`;
+
+exports[`UI - Button Snapshot should match snapshot with tertiary props 1`] = `
+<div>
+  <button
+    class="flex items-center justify-center rounded-md gap-2 disabled:opacity-60 disabled:cursor-not-allowed w-full data-[variant=tertiary]:bg-tertiary text-white shadow data-[variant=tertiary]:hover:bg-dark h-9 px-4 py-2"
+    data-variant="tertiary"
+  />
+</div>
+`;
