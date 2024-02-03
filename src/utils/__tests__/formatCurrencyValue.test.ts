@@ -1,13 +1,13 @@
 import formatCurrencyValue from '@/utils/formatCurrencyValue';
 
-describe('formatCurrencyValue', () => {
+describe('Utils - formatCurrencyValue', () => {
   it('should format currency value with default language', () => {
     const result = formatCurrencyValue({ value: 10.5 });
     expect(result).toContain('R$');
     expect(result).toContain('10,50');
   });
 
-  it('should format currency value for Argentina  language', () => {
+  it('should format currency value for Argentina language', () => {
     const result = formatCurrencyValue({
       lang: 'es-AR',
       currency: 'ARS',

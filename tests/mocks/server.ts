@@ -1,7 +1,7 @@
-import { rest, DefaultBodyType } from 'msw';
-import { setupServer } from 'msw/node';
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
 
-export const server = setupServer();
+export const mockAxios = new MockAdapter(axios);
 
 interface MockRequestProps<T> {
   endpoint: string;
@@ -9,24 +9,10 @@ interface MockRequestProps<T> {
   response: T;
 }
 
-export const mockGetRequest = <T extends DefaultBodyType>(
-  props: MockRequestProps<T>
-) => {
-  const { endpoint, status = 200, response } = props;
-  server.use(
-    rest.get(endpoint, (req, res, ctx) => {
-      return res(ctx.status(status), ctx.json(response));
-    })
-  );
-};
-
-export const mockPostRequest = <T extends DefaultBodyType>(
-  props: MockRequestProps<T>
-) => {
-  const { endpoint, status = 200, response } = props;
-  server.use(
-    rest.post(endpoint, (req, res, ctx) => {
-      return res(ctx.status(status), ctx.json(response));
-    })
-  );
+export const mockGetRequest = <T>({
+  endpoint,
+  status = 200,
+  response,
+}: MockRequestProps<T>) => {
+  mockAxios.onGet(endpoint).reply(status, response);
 };
