@@ -35,7 +35,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   const { search } = params as Params;
   const { limit, offset } = query as Query;
 
-  const parseLimit = limit ? Number(limit) : 10;
+  const parseLimit = limit ? Number(limit) : 20;
   const parseOffset = offset ? Number(offset) : 0;
 
   const data = await searchItems({

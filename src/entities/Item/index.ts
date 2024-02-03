@@ -9,7 +9,7 @@ export type ItemPicture = {
   url: string;
 };
 
-type ItemAttributes = {
+export type ItemAttribute = {
   id: string;
   name: string;
   value_name: string;
@@ -25,7 +25,8 @@ export type Item = {
   currency: string;
   pictures?: ItemPicture[];
   description?: string;
-  attributes: ItemAttributes[];
+  attributes: ItemAttribute[];
+  permalink: string;
 };
 
 export type ItemDescription = {

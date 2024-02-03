@@ -50,7 +50,7 @@ export function Search({ data, search }: Props) {
           {total} resultados
         </small>
       </div>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {data?.results.map((item) => <CardItem key={item.id} item={item} />)}
       </div>
       <div className="flex items-center justify-between px-2">

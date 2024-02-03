@@ -1,4 +1,5 @@
 import { useItem } from '@item/hooks/useItem';
+import ItemAttributeItem from './item-attribute-item';
 
 export function ItemAttributes() {
   const { item } = useItem();
@@ -12,15 +13,7 @@ export function ItemAttributes() {
         {item.attributes
           .filter((attribute) => !!attribute.value_name)
           .map((attribute) => (
-            <div
-              key={attribute.id}
-              className={`flex flex-row items-center justify-between gap-4 text-xs font-normal`}
-            >
-              <strong className="text-left font-semibold text-primary">
-                {`${attribute.name}:`}
-              </strong>
-              <p className="text-right text-tertiary">{attribute.value_name}</p>
-            </div>
+            <ItemAttributeItem key={attribute.id} attribute={attribute} />
           ))}
       </div>
     </div>

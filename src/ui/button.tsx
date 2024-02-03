@@ -3,7 +3,7 @@ import { VariantProps, tv } from 'tailwind-variants';
 import classNameMerge from '@/utils/classNameMerge';
 
 const buttonVariant = tv({
-  base: 'flex items-center justify-center rounded-md gap-2 disabled:opacity-60 disabled:cursor-not-allowed',
+  base: 'flex items-center justify-center rounded-md gap-2 disabled:opacity-60 disabled:cursor-not-allowed w-full',
   variants: {
     variant: {
       primary:
