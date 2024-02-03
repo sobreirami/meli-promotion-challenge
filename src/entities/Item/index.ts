@@ -21,7 +21,6 @@ export type Item = {
   title: string;
   thumbnail: string;
   price: number;
-  original_price: number;
   currency: string;
   pictures?: ItemPicture[];
   description?: string;
