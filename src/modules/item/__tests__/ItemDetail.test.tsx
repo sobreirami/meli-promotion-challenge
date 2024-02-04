@@ -1,11 +1,11 @@
-import { ItemDetail } from '@item/screens/item-detail';
+import { ItemDetailScreen } from '@item/screens/ItemDetail';
 import { customRender, screen } from '@test/utils/render';
 import * as useItemModule from '@item/hooks/useItem';
 import { MOCK_ITEM_DETAIL } from './mock';
 
 jest.mock('@item/hooks/useItem');
 
-describe('Modules - Item - ItemDetail', () => {
+describe('Modules - Item - ItemDetailScreen', () => {
   beforeEach(() => {
     jest.spyOn(useItemModule, 'useItem').mockReturnValue({
       item: MOCK_ITEM_DETAIL,
@@ -15,8 +15,8 @@ describe('Modules - Item - ItemDetail', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
-  test('should render the ItemDetail screen', async () => {
-    customRender(<ItemDetail />);
+  test('should render the ItemDetailScreen screen', async () => {
+    customRender(<ItemDetailScreen />);
     expect(screen.getByTestId('item-detail-screen')).toBeInTheDocument();
     expect(
       screen.queryByText(MOCK_ITEM_DETAIL.description)

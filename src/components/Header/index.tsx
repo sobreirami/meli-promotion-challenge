@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useParams } from 'next/navigation';
-import { Input } from '@/ui/input';
-import { Logo } from '@/components/logo';
+import { Input } from '@/ui/Input';
+import { Logo } from '@/components/Logo';
 
 import { CustomFormEvent, HeaderParams } from './types';
 

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useItem } from '@item/hooks/useItem';
-import { Button } from '@/ui/button';
+import { Button } from '@/ui/Button';
 import formatCurrencyValue from '@/utils/formatCurrencyValue';
 
 export function ItemAsideCart() {

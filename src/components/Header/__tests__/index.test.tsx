@@ -1,4 +1,4 @@
-import { Header } from '@/components/header';
+import { Header } from '@/components/Header';
 import { customRender, fireEvent, screen } from '@test/utils/render';
 
 const pushMock = jest.fn();

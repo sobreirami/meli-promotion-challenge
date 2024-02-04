@@ -1,5 +1,5 @@
 import { customRender, screen } from '@test/utils/render';
-import { CardItem } from '@/components/card-item';
+import { CardItem } from '@/components/CardItem';
 import { MOCK_RESPONSE_ITEM } from '@/services/item/__tests__/mock';
 
 const pushMock = jest.fn();

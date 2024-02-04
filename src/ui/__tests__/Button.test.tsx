@@ -1,5 +1,5 @@
 import { customRender } from '@test/utils/render';
-import { Button } from '@/ui/button';
+import { Button } from '@/ui/Button';
 
 describe('UI - Button Snapshot', () => {
   test('should match snapshot with default props', () => {

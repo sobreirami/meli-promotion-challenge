@@ -2,7 +2,7 @@ import type { ReactElement, ReactNode } from 'react';
 import type { RenderHookOptions, RenderResult } from '@testing-library/react';
 import { renderHook, render as testingRender } from '@testing-library/react';
 
-import TanstackProvider from '@/app/providers/tanstackProvider';
+import TanstackProvider from '@/providers/TanstackProvider';
 
 type Props = {
   children?: ReactNode;

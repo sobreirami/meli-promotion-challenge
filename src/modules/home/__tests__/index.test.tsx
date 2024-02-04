@@ -2,7 +2,7 @@ import { MOCK_RESPONSE_SEARCH } from '@/services/search/__tests__/mock';
 import { mockGetRequest } from '@test/mocks/server';
 import { customRender, screen, waitFor } from '@test/utils/render';
 
-import { Home } from '@/modules/home';
+import { HomeScreen } from '@/modules/home';
 
 describe('Modules - Home', () => {
   const siteId = 'MLB';
@@ -13,7 +13,7 @@ describe('Modules - Home', () => {
       response: MOCK_RESPONSE_SEARCH,
     });
 
-    customRender(<Home />);
+    customRender(<HomeScreen />);
 
     await waitFor(() => screen.getByTestId('home-screen'));
 
@@ -37,7 +37,7 @@ describe('Modules - Home', () => {
       },
     });
 
-    customRender(<Home />);
+    customRender(<HomeScreen />);
 
     await waitFor(() => screen.getByTestId('home-screen'));
     expect(screen.getByText('Title 1')).toBeInTheDocument();

@@ -1,5 +1,6 @@
 import { useItem } from '@item/hooks/useItem';
-import ItemAttributeItem from './item-attribute-item';
+
+import ItemAttributeItem from './ItemAttributeItem';
 
 export function ItemAttributes() {
   const { item } = useItem();

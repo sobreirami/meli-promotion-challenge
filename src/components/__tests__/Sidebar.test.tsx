@@ -1,4 +1,4 @@
-import { Sidebar } from '@/components/sidebar';
+import { Sidebar } from '@/components/Sidebar';
 import { MOCK_RESPONSE_CATEGORY } from '@/services/category/__tests__/mock';
 import { mockGetRequest } from '@test/mocks/server';
 import { customRender, screen, waitFor } from '@test/utils/render';

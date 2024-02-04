@@ -1,11 +1,11 @@
 import { GetServerSideProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 
-import { Search } from '@item/screens/search';
-import { Layout } from '@/components/layout';
+import { Layout } from '@/components/Layout';
 import { searchItems } from '@/services/search/client';
 import { ResponseSearch } from '@/services/search/types';
-import { Seo, SeoProps } from '@/components/seo';
+import { Seo, SeoProps } from '@/components/Seo';
+import { SearchScreen } from '@/modules/item/screens/Search';
 
 type Props = {
   search: string;
@@ -38,7 +38,7 @@ export default function SearchPage({ search, data }: Props) {
   return (
     <Layout>
       <Seo {...seo} />
-      <Search data={data} search={search} />
+      <SearchScreen data={data} search={search} />
     </Layout>
   );
 }

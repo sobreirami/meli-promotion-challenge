@@ -2,18 +2,18 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 import { SelectTrigger } from '@radix-ui/react-select';
 import { useRouter } from 'next/router';
 
-import { CardItem } from '@/components/card-item';
+import { CardItem } from '@/components/CardItem';
 import { ResponseSearch } from '@/services/search/types';
-import { Button } from '@/ui/button';
-import { Select, SelectContent, SelectItem, SelectValue } from '@/ui/select';
-import { SearchEmptyState } from '@item/components/search-empty-state';
+import { Button } from '@/ui/Button';
+import { Select, SelectContent, SelectItem, SelectValue } from '@/ui/Select';
+import { SearchEmptyState } from '@item/components/SearchEmptyState';
 
 type Props = {
   search: string;
   data: ResponseSearch;
 };
 
-export function Search({ data, search }: Props) {
+export function SearchScreen({ data, search }: Props) {
   const router = useRouter();
 
   const { offset, limit, total } = data.paging;

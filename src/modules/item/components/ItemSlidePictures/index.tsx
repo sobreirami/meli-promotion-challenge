@@ -2,7 +2,8 @@ import Image from 'next/image';
 import { useCallback, useState } from 'react';
 
 import { useItem } from '@item/hooks/useItem';
-import ItemSlidePictureItem from './item-slide-picture-item';
+
+import ItemSlidePictureItem from './ItemSlidePictureItem';
 
 export function ItemSlidePictures() {
   const { item } = useItem();

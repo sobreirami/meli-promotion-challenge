@@ -3,7 +3,7 @@ import './globals.css';
 import { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
 
-import Providers from '@/app/providers';
+import Providers from '@/providers';
 
 export const inter = Inter({
   weight: ['300', '400'],

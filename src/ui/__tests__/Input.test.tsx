@@ -1,5 +1,5 @@
 import { customRender } from '@test/utils/render';
-import { Input } from '@/ui/input';
+import { Input } from '@/ui/Input';
 
 describe('UI - Input Snapshot', () => {
   test('should match snapshot with default props', () => {

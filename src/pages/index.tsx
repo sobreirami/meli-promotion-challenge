@@ -1,6 +1,6 @@
-import { Layout } from '@/components/layout';
-import { Seo, SeoProps } from '@/components/seo';
-import { Home } from '@/modules/home';
+import { Layout } from '@/components/Layout';
+import { Seo, SeoProps } from '@/components/Seo';
+import { HomeScreen } from '@/modules/home';
 
 export default function HomePage() {
   const seo: SeoProps = {
@@ -19,7 +19,7 @@ export default function HomePage() {
   return (
     <Layout>
       <Seo {...seo} />
-      <Home />
+      <HomeScreen />
     </Layout>
   );
 }

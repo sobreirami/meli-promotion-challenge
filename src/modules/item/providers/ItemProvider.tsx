@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { ItemContext } from '@item/contexts/item-context';
+import { ItemContext } from '@item/contexts/ItemContext';
 import { Item } from '@/entities/Item';
 
 type Props = {

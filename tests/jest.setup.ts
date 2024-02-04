@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 
-import { queryClient } from '@/app/providers/tanstackProvider';
+import { queryClient } from '@/providers/TanstackProvider';
 import { mockAxios } from './mocks/server';
 import './mocks/router';
 import './mocks/image';

@@ -1,5 +1,5 @@
 import { customRender } from '@test/utils/render';
-import { Carousel } from '@/ui/carousel';
+import { Carousel } from '@/ui/Carousel';
 
 describe('UI - Carousel Snapshot', () => {
   test('should match snapshot with default props', () => {

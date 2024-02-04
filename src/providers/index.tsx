@@ -1,7 +1,7 @@
 import { DehydratedState } from '@tanstack/react-query';
 import { ReactNode } from 'react';
 
-import TanstackProvider from './tanstackProvider';
+import TanstackProvider from './TanstackProvider';
 
 type Props = {
   children: ReactNode;

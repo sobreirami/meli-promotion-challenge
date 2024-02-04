@@ -1,7 +1,7 @@
-import { Carousel } from '@/ui/carousel';
+import { Carousel } from '@/ui/Carousel';
 
 import { MOCK_PROMOTION } from './constants';
-import PromotionItem from './promotion-item';
+import PromotionItem from './PromotionItem';
 
 export function HomeCarouselPromotion() {
   return (

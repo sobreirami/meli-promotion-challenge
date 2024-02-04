@@ -1,21 +1,54 @@
-## Getting Started
+# Desafio Técnico - Challenge Promotions
 
-First, run the development server:
+- [Desafio Técnico - Challenge Promotions](#desafio-técnico---challenge-promotions)
+  - [Como instalar](#como-instalar)
+  - [Decisões e escolhas](#decisões-e-escolhas)
+    - [Stack](#stack)
+    - [Techs](#techs)
+    - [Estrutura do projeto](#estrutura-do-projeto)
+    - [Stores](#stores)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Como instalar
+
+```sh
+yarn && yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ou com docker
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+docker build ./ -t meli-promotion-challenge:latest
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+docker run -p 3000:3000 meli-promotion-challenge
+```
 
-## Learn More
+## Decisões e escolhas
+
+### Stack
+
+Como se trata de um projeto público no qual os mecanismos de busca podem realizar indexação, optei pelo framework Next.js como a escolha mais vantajosa. Além disso, priorizei a eficiência nos requisitos estabelecidos, decidindo assim utilizar o Tailwind CSS para simplificar e agilizar o processo de estilização dos componentes.
+
+### Techs
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Query](https://tanstack.com/query/v3/)
+
+### Estrutura do projeto
+
+```sh
+src
+├── assets       # Arquivos estáticos globais
+├── components   # Componentes globais
+├── entities     # Tipos que representam respostas de uma API
+├── libs         # Providers e configurações específicas de alguma lib
+├── modules      # Modularização da aplicação separada por regras de negócio
+├── pages        # Cada página é associada a sua rota específica
+├── services     # Integração com backend
+├── ui           # Componentes
+└── utils        # Funções utilitarias e usadas globalmente
+```
+
+### Stores
+
+Nesse projeto utilizei dos 3 modos de gerenciamentos de estados local, global e de rede,

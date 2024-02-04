@@ -1,9 +1,9 @@
 import { HTMLAttributes, ReactNode } from 'react';
 
 import classNameMerge from '@/utils/classNameMerge';
-import { Header } from './header';
-import { Footer } from './footer';
-import { Sidebar } from './sidebar';
+import { Header } from './Header';
+import { Footer } from './Footer';
+import { Sidebar } from './Sidebar';
 
 type LayoutProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;

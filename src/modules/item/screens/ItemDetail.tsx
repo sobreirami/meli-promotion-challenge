@@ -1,12 +1,12 @@
 import ReactMarkdown from 'react-markdown';
 
-import { ItemSlidePictures } from '@item/components/item-slide-pictures';
-import { ItemAttributes } from '@item/components/item-attributes';
+import { ItemSlidePictures } from '@item/components/ItemSlidePictures';
+import { ItemAttributes } from '@item/components/ItemAttributes';
 
-import { ItemAsideCart } from '@item/components/item-aside-cart';
+import { ItemAsideCart } from '@item/components/ItemAsideCart';
 import { useItem } from '@item/hooks/useItem';
 
-export function ItemDetail() {
+export function ItemDetailScreen() {
   const { item } = useItem();
 
   return (

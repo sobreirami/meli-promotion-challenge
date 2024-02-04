@@ -1,10 +1,10 @@
 import { MOCK_RESPONSE_SEARCH } from '@/services/search/__tests__/mock';
 import { customRender, screen } from '@test/utils/render';
 
-import { Search } from '@/modules/item/screens/search';
+import { SearchScreen } from '@/modules/item/screens/Search';
 import { ResponseSearch } from '@/services/search/types';
 
-describe('Modules - Item - Search', () => {
+describe('Modules - Item - SearchScreen', () => {
   test('should render the Search screen', async () => {
     const searchQuery = 'product 1';
 
@@ -23,7 +23,7 @@ describe('Modules - Item - Search', () => {
       },
     };
 
-    customRender(<Search data={data} search={searchQuery} />);
+    customRender(<SearchScreen data={data} search={searchQuery} />);
     expect(screen.getByText(searchQuery)).toBeInTheDocument();
     expect(
       screen.getByText(`${results.length} resultados`)
@@ -42,7 +42,7 @@ describe('Modules - Item - Search', () => {
       },
     };
 
-    customRender(<Search data={data} search={searchQuery} />);
+    customRender(<SearchScreen data={data} search={searchQuery} />);
     expect(screen.getByText(`0 resultados`)).toBeInTheDocument();
     expect(screen.getByText(`Nenhum resultado encontrado`)).toBeInTheDocument();
   });

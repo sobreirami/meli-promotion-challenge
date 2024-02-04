@@ -1,12 +1,12 @@
 import { GetServerSideProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 
-import { ItemDetail } from '@item/screens/item-detail';
-import { ItemProvider } from '@item/providers/item-provider';
-import { Layout } from '@/components/layout';
+import { ItemDetailScreen } from '@item/screens/ItemDetail';
+import { ItemProvider } from '@item/providers/ItemProvider';
+import { Layout } from '@/components/Layout';
 import { Item } from '@/entities/Item';
 import { getItemWithDescription } from '@/services/item';
-import { Seo, SeoProps } from '@/components/seo';
+import { Seo, SeoProps } from '@/components/Seo';
 
 type Params = ParsedUrlQuery & {
   search: string;
@@ -34,7 +34,7 @@ export default function ItemPage({ item }: Props) {
     <Layout>
       <Seo {...seo} />
       <ItemProvider item={item}>
-        <ItemDetail />
+        <ItemDetailScreen />
       </ItemProvider>
     </Layout>
   );

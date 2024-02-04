@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 
-import { HomeCarouselPromotion } from '@home/components/home-carousel-promotion';
+import { HomeCarouselPromotion } from '@/modules/home/components/HomeCarouselPromotion';
 import { useSearchItem } from '@/services/search';
-import { CardItem } from '@/components/card-item';
+import { CardItem } from '@/components/CardItem';
 
-export function Home() {
+export function HomeScreen() {
   const { data: items } = useSearchItem({
     limit: 20,
     offset: 0,
