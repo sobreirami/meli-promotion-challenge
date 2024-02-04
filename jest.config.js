@@ -7,7 +7,8 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   testEnvironment: `jsdom`,
   testMatch: [`**/__tests__/**/*.test.ts?(x)`],
-  snapshotResolver: `<rootDir>/tests/jest-snapshot-resolver.ts`,
+  snapshotResolver: `<rootDir>/tests/jestSnapshotResolver.ts`,
+  setupFiles: [`<rootDir>/tests/jestSetupEnvVars.ts`],
   setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
