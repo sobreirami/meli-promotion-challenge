@@ -27,7 +27,7 @@ export function Home() {
 
       {items?.results && !!items?.results.length && (
         <div
-          className="z-10 my-4 mt-[-80px] flex flex-col gap-4 md:mx-2"
+          className="z-10 flex flex-col gap-4 md:mx-2 md:my-4 md:mt-[-80px]"
           data-testid="home-screen"
         >
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
