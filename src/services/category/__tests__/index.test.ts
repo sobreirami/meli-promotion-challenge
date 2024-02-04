@@ -2,11 +2,12 @@ import { mockGetRequest } from '@test/mocks/server';
 import { act, customRenderHook, waitFor } from '@test/utils/render';
 import { getCategories } from '@/services/category/client';
 
+import { MELI_COUNTRY_CODE } from '@/configs/environment';
 import { MOCK_RESPONSE_CATEGORY } from './mock';
 import { useCategory } from '..';
 
 describe('Service - Category', () => {
-  const siteId = 'MLB';
+  const siteId = MELI_COUNTRY_CODE;
 
   beforeEach(() => {
     mockGetRequest({

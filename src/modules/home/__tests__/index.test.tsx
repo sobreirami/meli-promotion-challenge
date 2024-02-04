@@ -3,9 +3,10 @@ import { mockGetRequest } from '@test/mocks/server';
 import { customRender, screen, waitFor } from '@test/utils/render';
 
 import { HomeScreen } from '@/modules/home';
+import { MELI_COUNTRY_CODE } from '@/configs/environment';
 
 describe('Modules - Home', () => {
-  const siteId = 'MLB';
+  const siteId = MELI_COUNTRY_CODE;
 
   test('should render the Home screen', async () => {
     mockGetRequest({

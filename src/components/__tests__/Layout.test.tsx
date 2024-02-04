@@ -1,11 +1,12 @@
 import { Layout } from '@/components/Layout';
+import { MELI_COUNTRY_CODE } from '@/configs/environment';
 import { MOCK_RESPONSE_CATEGORY } from '@/services/category/__tests__/mock';
 import { mockGetRequest } from '@test/mocks/server';
 import { customRender, screen, waitFor } from '@test/utils/render';
 
 describe('Components - Layout', () => {
   beforeEach(() => {
-    const siteId = 'MLB';
+    const siteId = MELI_COUNTRY_CODE;
 
     mockGetRequest({
       endpoint: `/sites/${siteId}/categories`,

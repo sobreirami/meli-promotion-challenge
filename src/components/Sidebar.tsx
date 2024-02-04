@@ -3,12 +3,13 @@ import Link from 'next/link';
 
 import classNameMerge from '@/utils/classNameMerge';
 import { useCategory } from '@/services/category';
+import { MELI_COUNTRY_CODE } from '@/configs/environment';
 
 type SidebarProps = HTMLAttributes<HTMLDivElement>;
 
 export function Sidebar({ className }: SidebarProps) {
   const { data } = useCategory({
-    siteId: 'MLB',
+    siteId: MELI_COUNTRY_CODE,
   });
 
   if (!data) {

@@ -11,9 +11,10 @@ import {
 } from '@test/utils/render';
 import SearchPage from '@/pages/buscar/[search]';
 import { useSearchItem } from '@/services/search';
+import { MELI_COUNTRY_CODE } from '@/configs/environment';
 
 describe('Pages - Search', () => {
-  const siteId = 'MLB';
+  const siteId = MELI_COUNTRY_CODE;
 
   beforeEach(() => {
     mockGetRequest({

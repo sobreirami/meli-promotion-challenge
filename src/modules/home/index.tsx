@@ -3,13 +3,14 @@ import { useMemo } from 'react';
 import { HomeCarouselPromotion } from '@/modules/home/components/HomeCarouselPromotion';
 import { useSearchItem } from '@/services/search';
 import { CardItem } from '@/components/CardItem';
+import { MELI_COUNTRY_CODE } from '@/configs/environment';
 
 export function HomeScreen() {
   const { data: items } = useSearchItem({
     limit: 20,
     offset: 0,
     search: 'Promoções',
-    siteId: 'MLB',
+    siteId: MELI_COUNTRY_CODE,
   });
 
   const separeItems = useMemo(() => {

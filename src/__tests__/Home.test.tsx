@@ -4,10 +4,11 @@ import { MOCK_RESPONSE_SEARCH } from '@/services/search/__tests__/mock';
 import { mockGetRequest } from '@test/mocks/server';
 import { customRender, screen, waitFor } from '@test/utils/render';
 import HomePage from '@/pages';
+import { MELI_COUNTRY_CODE } from '@/configs/environment';
 
 describe('Pages - Home', () => {
   beforeEach(() => {
-    const siteId = 'MLB';
+    const siteId = MELI_COUNTRY_CODE;
 
     mockGetRequest({
       endpoint: `/sites/${siteId}/categories`,

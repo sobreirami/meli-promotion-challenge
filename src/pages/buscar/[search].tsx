@@ -6,6 +6,7 @@ import { searchItems } from '@/services/search/client';
 import { ResponseSearch } from '@/services/search/types';
 import { Seo, SeoProps } from '@/components/Seo';
 import { SearchScreen } from '@/modules/item/screens/Search';
+import { MELI_COUNTRY_CODE } from '@/configs/environment';
 
 type Props = {
   search: string;
@@ -57,7 +58,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     limit: parseLimit,
     offset: parseOffset,
     search,
-    siteId: 'MLB',
+    siteId: MELI_COUNTRY_CODE,
   });
 
   return {

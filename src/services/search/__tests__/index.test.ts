@@ -3,10 +3,11 @@ import { mockGetRequest } from '@test/mocks/server';
 import { searchItems } from '@/services/search/client';
 import { useSearchItem } from '@/services/search/';
 import { act, customRenderHook, waitFor } from '@test/utils/render';
+import { MELI_COUNTRY_CODE } from '@/configs/environment';
 import { MOCK_RESPONSE_SEARCH } from './mock';
 
 describe('Service - Search', () => {
-  const siteId = 'MLB';
+  const siteId = MELI_COUNTRY_CODE;
 
   beforeEach(() => {
     mockGetRequest({
