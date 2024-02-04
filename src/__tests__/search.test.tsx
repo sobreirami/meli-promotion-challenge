@@ -1,4 +1,3 @@
-import { beforeEach } from 'node:test';
 import { MOCK_RESPONSE_CATEGORY } from '@/services/category/__tests__/mock';
 import { MOCK_RESPONSE_SEARCH } from '@/services/search/__tests__/mock';
 
