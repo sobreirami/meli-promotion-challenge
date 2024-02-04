@@ -5,6 +5,7 @@ import { Search } from '@item/screens/search';
 import { Layout } from '@/components/layout';
 import { searchItems } from '@/services/search/client';
 import { ResponseSearch } from '@/services/search/types';
+import { Seo, SeoProps } from '@/components/seo';
 
 type Props = {
   search: string;
@@ -21,8 +22,22 @@ type Query = {
 };
 
 export default function SearchPage({ search, data }: Props) {
+  const seo: SeoProps = {
+    title: `${search} | Desafio Técnico`,
+    openGraph: {
+      type: 'website',
+      title: `${search} | Desafio Técnico`,
+      images: [
+        {
+          url: '/icon.png',
+        },
+      ],
+    },
+  };
+
   return (
     <Layout>
+      <Seo {...seo} />
       <Search data={data} search={search} />
     </Layout>
   );
