@@ -6,6 +6,7 @@ import { CardItem } from '@/components/card-item';
 import { ResponseSearch } from '@/services/search/types';
 import { Button } from '@/ui/button';
 import { Select, SelectContent, SelectItem, SelectValue } from '@/ui/select';
+import { SearchEmptyState } from '@item/components/search-empty-state';
 
 type Props = {
   search: string;
@@ -50,47 +51,55 @@ export function Search({ data, search }: Props) {
           {total} resultados
         </small>
       </div>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-        {data?.results.map((item) => <CardItem key={item.id} item={item} />)}
-      </div>
-      <div className="flex items-center justify-between p-2">
-        <div className="flex flex-1 items-center justify-between space-x-6 lg:space-x-8">
-          <div className="flex items-center gap-2">
-            <p className="text-sm font-medium">Linhas</p>
-            <Select value={`${limit}`} onValueChange={handleLimit}>
-              <SelectTrigger className="h-8 w-[70px] rounded-lg border">
-                <SelectValue placeholder={limit} />
-              </SelectTrigger>
-              <SelectContent side="top">
-                {[10, 20, 30, 40, 50].map((pageSize) => (
-                  <SelectItem key={pageSize} value={`${pageSize}`}>
-                    {pageSize}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+      {!!data?.results.length ? (
+        <>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {data?.results.map((item) => (
+              <CardItem key={item.id} item={item} />
+            ))}
           </div>
-          <div className="flex items-center gap-2">
-            <Button
-              variant="outline"
-              className="h-8 w-8 items-center justify-center p-0"
-              disabled={offset === 0}
-              onClick={prevPage}
-            >
-              <span className="sr-only">Go to previous page</span>
-              <ChevronLeftIcon className="h-4 w-4" />
-            </Button>
-            <Button
-              variant="outline"
-              className="h-8 w-8 p-0"
-              onClick={nextPage}
-            >
-              <span className="sr-only">Go to next page</span>
-              <ChevronRightIcon className="h-4 w-4" />
-            </Button>
+          <div className="flex items-center justify-between p-2">
+            <div className="flex flex-1 items-center justify-between space-x-6 lg:space-x-8">
+              <div className="flex items-center gap-2">
+                <p className="text-sm font-medium">Linhas</p>
+                <Select value={`${limit}`} onValueChange={handleLimit}>
+                  <SelectTrigger className="h-8 w-[70px] rounded-lg border">
+                    <SelectValue placeholder={limit} />
+                  </SelectTrigger>
+                  <SelectContent side="top">
+                    {[10, 20, 30, 40, 50].map((pageSize) => (
+                      <SelectItem key={pageSize} value={`${pageSize}`}>
+                        {pageSize}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="outline"
+                  className="h-8 w-8 items-center justify-center p-0"
+                  disabled={offset === 0}
+                  onClick={prevPage}
+                >
+                  <span className="sr-only">Go to previous page</span>
+                  <ChevronLeftIcon className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  className="h-8 w-8 p-0"
+                  onClick={nextPage}
+                >
+                  <span className="sr-only">Go to next page</span>
+                  <ChevronRightIcon className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      ) : (
+        <SearchEmptyState />
+      )}
     </>
   );
 }

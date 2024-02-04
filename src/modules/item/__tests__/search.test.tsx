@@ -29,4 +29,21 @@ describe('Modules - Item - Search', () => {
       screen.getByText(`${results.length} resultados`)
     ).toBeInTheDocument();
   });
+
+  test('should make the search screen empty', async () => {
+    const searchQuery = 'product not found';
+
+    const data: ResponseSearch = {
+      results: [],
+      paging: {
+        limit: 0,
+        offset: 0,
+        total: 0,
+      },
+    };
+
+    customRender(<Search data={data} search={searchQuery} />);
+    expect(screen.getByText(`0 resultados`)).toBeInTheDocument();
+    expect(screen.getByText(`Nenhum resultado encontrado`)).toBeInTheDocument();
+  });
 });
